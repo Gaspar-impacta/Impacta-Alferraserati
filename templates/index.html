@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página 1</title>
+    <title>Página inicial</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
-<body>
-    <div>
+<body> 
+    <div class="container">
     <h1>Alferraserati</h1>
-        <a href="/cadastrar_carro" class="btn">Cadastrar Carro</a>
+    <h2>O maior especialista em carros esportivos italianos</h2>
+    <img src="{{ url_for('static', filename='img/ferraripic.jpg') }}" alt="Foto Carro" class="img">
+    <p>Trabalhamos somente com as marcas Alfa Romeo, Ferrari e Maserati</p><br>
+    <a href="/cadastrar_carro" class="btn-cadastropage">Cadastrar Carro</a>
     </div>
 </body>
 </html>
