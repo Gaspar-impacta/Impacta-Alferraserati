@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Carros</title>
+    <script src="{{ url_for('static', filename='js/lista.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Lista de carros no estoque</h1>
+    <table class="table-carros">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fabricante</th>
+                <th>Modelo</th>
+                <th>Ano</th>
+                <th>Cor</th>
+                <th>KM</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}" class="btn-voltar">Voltar</a>
+    <div class="container-logo">
+    <img src="{{ url_for('static', filename='img/alfa_romeo_logo.jpg') }}" alt="Foto Carro Alfa Romeo" class="img-logo1">
+    <img src="{{ url_for('static', filename='img/maserati_logo.jpg') }}" alt="Foto Carro Maserati" class="img-logo2">
+    <img src="{{ url_for('static', filename='img/ferrari_logo.jpg') }}" alt="Foto Carro Ferrari" class="img-logo3">
+    </div>
+</body>
+</html>
