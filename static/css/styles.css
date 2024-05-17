@@ -59,7 +59,6 @@ img {
     height: auto; 
 }
 
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -107,4 +106,18 @@ tr:hover {
 
 .container-logo img {
     margin: 0 100px;
+}
+
+.ordenacao-container {
+    display: flex;
+    align-items: center;
+}
+
+.ordenacao-container label {
+    margin-right: 10px;
+}
+
+.table-carros td:last-child {
+    border: none;
+    background-color: #ffffff;
 }

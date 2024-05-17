@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Carro</title>
+    <script src="{{ url_for('static', filename='js/editar_carro.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">  
+</head>
+<body>
+    <h1>Editar Carro</h1>
+    <form id="editarCarroForm">
+
+        <input type="hidden" id="idCarro" name="idCarro">
+        
+        <div class="form-group">
+            <label>Fabricante:</label>
+            <span id="fabricanteTexto"></span>
+        </div>
+        <div class="form-group">
+            <br><label>Modelo:</label>
+            <span id="modeloTexto"></span>
+        </div>
+        <div class="form-group">
+            <br><label>Ano:</label>
+            <span id="anoTexto"></span>
+        </div>
+        <div class="form-group">
+            <br><label>Cor:</label>
+            <span id="corTexto"></span>
+        </div>
+
+        <div class="form-group">
+            <br><label for="km">KM:</label>
+            <input type="number" id="km" name="km">
+        </div>
+        <div class="form-group">
+            <label for="preco">Preço:</label>
+            <input type="number" id="preco" name="preco">
+        </div>
+
+        <button type="button" id="btnSalvar">Salvar</button>
+    </form>
+    <a href="/lista" class="btn-voltar">Voltar</a>
+</body>
+</html>

@@ -9,6 +9,20 @@
 </head>
 <body>
     <h1>Lista de carros no estoque</h1>
+    <div class="ordenacao-container">
+        <label for="ordenacao">Ordenar:</label>
+        <select id="ordenacao">
+            <option value="" disabled selected>Selecione uma opção</option>
+            <option value="1">Fabricante (A-Z)</option>
+            <option value="2">Fabricante (Z-A)</option>
+            <option value="3">Ano (↑)</option>
+            <option value="4">Ano (↓)</option>
+            <option value="5">KM (↑)</option>
+            <option value="6">KM (↓)</option>
+            <option value="7">Preço (↑)</option>
+            <option value="8">Preço (↓)</option>
+        </select>
+    </div>
     <table class="table-carros">
         <thead>
             <tr>
@@ -26,9 +40,9 @@
     </table>
     <a href="{{ url_for('index') }}" class="btn-voltar">Voltar</a>
     <div class="container-logo">
-    <img src="{{ url_for('static', filename='img/alfa_romeo_logo.jpg') }}" alt="Foto Carro Alfa Romeo" class="img-logo1">
-    <img src="{{ url_for('static', filename='img/maserati_logo.jpg') }}" alt="Foto Carro Maserati" class="img-logo2">
-    <img src="{{ url_for('static', filename='img/ferrari_logo.jpg') }}" alt="Foto Carro Ferrari" class="img-logo3">
+        <img src="{{ url_for('static', filename='img/alfa_romeo_logo.jpg') }}" alt="Foto Carro Alfa Romeo" class="img-logo1">
+        <img src="{{ url_for('static', filename='img/maserati_logo.jpg') }}" alt="Foto Carro Maserati" class="img-logo2">
+        <img src="{{ url_for('static', filename='img/ferrari_logo.jpg') }}" alt="Foto Carro Ferrari" class="img-logo3">
     </div>
 </body>
 </html>
