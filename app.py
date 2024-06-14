@@ -158,6 +158,15 @@ def atualizar_carro(id_carro):
         return jsonify({'error': str(e)}), 500
 
 
+@app.route('/api/carros/<int:idCarro>', methods=['DELETE'])
+def deletar_carro(idCarro):
+    try:
+        cursor.execute("DELETE FROM Carro WHERE id = ?", (idCarro,))
+        conn.commit()
+
+        return jsonify({'message': 'Carro deletado com sucesso!'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)

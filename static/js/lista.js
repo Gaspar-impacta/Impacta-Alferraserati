@@ -1,7 +1,11 @@
+let ordenacaoAtual = '';
+
 function obterListaCarros(ordenacao) {
+    ordenacaoAtual = ordenacao || ordenacaoAtual;
+
     let url = '/api/carros';
-    if (ordenacao) {
-        url += `?ordenacao=${ordenacao}`;
+    if (ordenacaoAtual) {
+        url += `?ordenacao=${ordenacaoAtual}`;
     }
 
     fetch(url, {
@@ -28,7 +32,10 @@ function obterListaCarros(ordenacao) {
                     <td>${carro.cor}</td>
                     <td>${carro.km}</td>
                     <td><strong>R$: </strong>${carro.preco}</td>
-                    <td><button onclick="editarCarro(${carro.id})">Editar</button></td>
+                    <td colspan="2">
+                    <button onclick="editarCarro(${carro.id})">Editar</button>
+                    <button onclick="deletarCarro(${carro.id})">Deletar</button>
+                </td>
                 </tr>`;
                 tbody.insertAdjacentHTML('beforeend', newRow);
             });
@@ -58,4 +65,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function editarCarro(idCarro) {
     window.location.href = `/editar_carro?id=${idCarro}`;
+}
+
+function deletarCarro(idCarro) {
+    if (confirm('Tem certeza que deseja deletar este carro?')) {
+        fetch(`/api/carros/${idCarro}`, {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            alert(data.message);
+            obterListaCarros();
+        })
+        .catch(error => {
+            console.error('Erro ao deletar carro:', error);
+            alert('Ocorreu um erro ao deletar o carro.');
+        });
+    }
 }
